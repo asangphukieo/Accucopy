@@ -537,10 +537,6 @@ if __name__ == '__main__':
         "0 means detected automatically by program, 1 means use the 1st period. "
         "2 means use the 2nd period, etc. Default is %(default)s")
     args = ap.parse_args()
-    if (ap.period < 0):
-        msg = (f"Argument `period` is non-negative integer-value, but you have "
-               f"specified {ap.period}. O will be used instead.")
-        sys.stderr.write(msg)
     wflow = MainFlow(args.configure_filepath, args.tumor_bam, args.normal_bam,
         output_dir=args.output_dir,
         snp_output_dir=args.snp_output_dir,
